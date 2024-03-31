@@ -22,8 +22,7 @@ def start_server(host='127.0.0.1', port=65432):
         s.listen()
 
         #Accept a connection
-        while (True):    
-            thread1 = ""
+        while (True):
             conn, addr = s.accept()
             # Creates new thread and targets to client function with conn and addr as arguments
             thread1 = threading.Thread(target=client_handle, args=(conn, addr))
